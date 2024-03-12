@@ -5,8 +5,9 @@
   </div>
   <hr class="text-white">
 
-  <div class="list-group list-reset">
-    <button class="list-group-item list-group-item-action">Placeholder</button>
+
+  <div *ngFor="let element of tagHistoy" class="list-group list-reset">
+    <button class="list-group-item list-group-item-action">{{element | titlecase}}</button>
   </div>
 
 </div>
