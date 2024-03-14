@@ -6,8 +6,13 @@
   <hr class="text-white">
 
 
-  <div *ngFor="let element of tagHistoy" class="list-group list-reset">
-    <button class="list-group-item list-group-item-action">{{element | titlecase}}</button>
+  <div class="list-group list-reset">
+    <button
+    *ngFor="let element of tagHistoy"
+    class="list-group-item list-group-item-action"
+    (click)="searchTag(element)">
+      {{element | titlecase}}
+    </button>
   </div>
 
 </div>

@@ -12,4 +12,8 @@ export class SidebarComponent {
   get tagHistoy() {
     return this.gifService.tagHistory;
   }
+
+  searchTag(tag: string) {
+    this.gifService.searchTag(tag);
+  }
 }
