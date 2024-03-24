@@ -19,5 +19,4 @@ export class ByCapitalPageComponent {
       this.countries = countries;
     });
   }
-
 }
