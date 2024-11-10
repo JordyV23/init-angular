@@ -1,0 +1,60 @@
+<p-panel header="Pipes Básicos" class="p-2">
+  <p>
+    Pipes Personalizacos - creados por
+    {{ "nosotros" | toggleCase : isUpperCase }}
+  </p>
+</p-panel>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <p-button
+      (click)="toggleUpperCase()"
+      label="ToggleCase"
+      icon="pi pi-search"
+      class="mr-2"
+    />
+  </div>
+  <div class="p-toolbar-group-end">
+    <p-button
+      label="Por Nombre"
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-success"
+    />
+    <p-button
+      label="Por Volar"
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-danger"
+    />
+    <p-button
+      label="Por Color"
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-help"
+    />
+  </div>
+</p-toolbar>
+
+<div class="grid">
+  <div class="col mt-2">
+    <p-panel header="Heroes">
+      <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nombre</th>
+            <th>Vuela</th>
+            <th>Color</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.canFly | canFly }}</td>
+            <td>{{ product.color }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+  </div>
+</div>
