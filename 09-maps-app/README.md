@@ -1,6 +1,8 @@
 # MapsApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+No usar directamente en AngularCLI (a menos que estén creadas las variables de entorno), ya que las variables de entorno se crean
+basados en el .env
 
 ## Development server
 
@@ -10,18 +12,26 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Envs
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Pasos
 
-## Running unit tests
+1. Clonar el . env. template y renombrarlo a
+2. Llenar las variables de entorno acorde
+3. Crear Angular Envs (opcional)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+``` npm
+npm run envs
+```
 
-## Running end-to-end tests
+> Para development ejecutar
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```npm
+npm run start
+```
 
-## Further help
+> Para producción ejecutar:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```npm
+npm run build
+```
