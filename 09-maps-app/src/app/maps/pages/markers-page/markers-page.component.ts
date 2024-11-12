@@ -48,6 +48,14 @@ export class MarkersPageComponent {
     // const marker = new Marker().setLngLat(this.currentLngLat).addTo(this.map);
   }
 
+  mapListener() {
+    if (!this.map) return;
+
+    this.map!.on('dragend', () => {
+      this.saveToLocalStorage();
+    });
+  }
+
   createMarker() {
     if (!this.map) return;
     const color = '#xxxxxx'.replace(/x/g, (y) =>
@@ -70,6 +78,10 @@ export class MarkersPageComponent {
     this.markers.push({ color, marker });
 
     this.saveToLocalStorage();
+
+    marker.on('dragend', () => {
+      this.saveToLocalStorage();
+    });
   }
 
   deleteMarker(index: number) {
